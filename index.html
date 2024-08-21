@@ -7,27 +7,24 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <style>
+
 .container {
     text-align: center;
     margin-top: 50px;
 }
 
-img {
-    width: 300px;
-    height: auto;
+.image-container {
+    display: inline-block;
     transition: transform 0.5s ease;
 }
 
-.rotateCheckbox {
-    display: none; /* Esconde o checkbox */
-}
-
-.rotateCheckbox:checked ~ .image {
-    transform: rotate(90deg); /* Gira a imagem 90 graus no sentido horário */
+img {
+    width: 300px;
+    height: auto;
 }
 
 .rotateButton {
-    margin-top: 20px;
+    margin: 10px;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
@@ -37,16 +34,35 @@ img {
     border: none;
     border-radius: 5px;
     text-align: center;
+    user-select: none;
 }
 
+.rotateInput {
+    display: none;
+}
+
+/* Rotação para a direita */
+#rotateRight:checked ~ .image-container {
+    transform: rotate(90deg);
+}
+
+/* Rotação para a esquerda */
+#rotateLeft:checked ~ .image-container {
+    transform: rotate(-90deg);
+}
 
 </style>
 <body>
     <div class="container">
-        <input type="checkbox" id="rotateCheckbox" class="rotateCheckbox">
-        <label for="rotateCheckbox" class="rotateButton">Girar Imagem</label>
-        <img src="https://demo.tailgrids.com/templates/startup/build/src/assets/images/hero/hero-image-01.png" alt="Imagem para girar" class="image">
-    </div>
+        <input type="checkbox" id="rotateRight" class="rotateInput">
+        <label for="rotateRight" class="rotateButton">Girar para Direita</label>
 
+        <input type="checkbox" id="rotateLeft" class="rotateInput">
+        <label for="rotateLeft" class="rotateButton">Girar para Esquerda</label>
+
+        <div class="image-container">
+            <img src="https://demo.tailgrids.com/templates/startup/build/src/assets/images/hero/hero-image-01.png" alt="Imagem para girar" class="image" id="image">
+        </div>
+    </div>
 </body>
 </html>
