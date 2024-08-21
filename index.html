@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotate Image</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+.container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+img {
+    width: 300px;
+    height: auto;
+    transition: transform 0.5s ease;
+}
+
+.rotateCheckbox {
+    display: none; /* Esconde o checkbox */
+}
+
+.rotateCheckbox:checked ~ .image {
+    transform: rotate(90deg); /* Gira a imagem 90 graus no sentido horário */
+}
+
+.rotateButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+</style>
+<body>
+    <div class="container">
+        <input type="checkbox" id="rotateCheckbox" class="rotateCheckbox">
+        <label for="rotateCheckbox" class="rotateButton">Girar Imagem</label>
+        <img src="https://demo.tailgrids.com/templates/startup/build/src/assets/images/hero/hero-image-01.png" alt="Imagem para girar" class="image">
+    </div>
+
+</body>
+</html>
